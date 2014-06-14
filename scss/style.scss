@@ -1,0 +1,22 @@
+// SCSS Imports. Everything needed to complement the project
+
+// -- Modules
+@import "variables";
+@import "mixins";
+
+
+// -- Third Party Stuff
+@import "_normalize";
+
+// The Styling-Part
+
+body {
+	font-family: $mainfont;
+	font-weight: 400;
+	font-size: $fontsize;
+	line-height: $lineheight;
+}
+
+a {
+	text-decoration: none;
+}
