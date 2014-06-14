@@ -294,3 +294,120 @@ body {
 a {
   text-decoration: none;
 }
+
+/* line 24, ../scss/style.scss */
+.body {
+  height: 500px;
+  width: 125px;
+  margin: 25px auto;
+}
+/* line 34, ../scss/style.scss */
+.body .head,
+.body .arm,
+.body .torso,
+.body .leg {
+  position: absolute;
+}
+/* line 41, ../scss/style.scss */
+.body .upper,
+.body .lower,
+.body .hand {
+  transform-origin: top;
+}
+/* line 45, ../scss/style.scss */
+.body .head {
+  height: 71.5px;
+  width: 71.5px;
+  z-index: 9;
+  border-radius: 50%;
+  margin-left: -5.75px;
+  background: lightgreen;
+}
+/* line 56, ../scss/style.scss */
+.body .torso {
+  margin-top: 61.5px;
+}
+/* line 60, ../scss/style.scss */
+.body .torso .neck {
+  height: 17.85px;
+  width: 33px;
+  margin-left: 13.5px;
+  background: lightgreen;
+}
+/* line 68, ../scss/style.scss */
+.body .torso .t--torso {
+  height: 160.65px;
+  width: 60px;
+  background: lightblue;
+}
+/* line 76, ../scss/style.scss */
+.body .arm {
+  margin-top: 92.325px;
+  margin-left: 15px;
+}
+/* line 82, ../scss/style.scss */
+.body .arm .upper,
+.body .arm .lower {
+  background: lightblue;
+}
+/* line 86, ../scss/style.scss */
+.body .arm .upper {
+  height: 95.625px;
+  width: 30px;
+}
+/* line 91, ../scss/style.scss */
+.body .arm .lower {
+  height: 95.625px;
+  width: 30px;
+}
+/* line 96, ../scss/style.scss */
+.body .arm .hand {
+  height: 31.5px;
+  width: 31.5px;
+  border-radius: 50%;
+  background: lightgreen;
+}
+/* line 105, ../scss/style.scss */
+.body .arm--r {
+  z-index: 10;
+}
+/* line 109, ../scss/style.scss */
+.body .arm--r .upper,
+.body .arm--r .lower {
+  background: #86c5da;
+}
+/* line 114, ../scss/style.scss */
+.body .leg {
+  margin-top: 240px;
+}
+/* line 119, ../scss/style.scss */
+.body .leg .upper,
+.body .leg .lower,
+.body .leg .foot {
+  background: lightgrey;
+}
+/* line 123, ../scss/style.scss */
+.body .leg .upper {
+  height: 118.75px;
+  width: 60px;
+}
+/* line 128, ../scss/style.scss */
+.body .leg .lower {
+  height: 106.25px;
+  width: 60px;
+}
+/* line 133, ../scss/style.scss */
+.body .leg .foot {
+  height: 25px;
+  width: 81px;
+  background: darkgrey;
+}
+/* line 145, ../scss/style.scss */
+.body .leg--l .upper,
+.body .leg--l .lower {
+  background: #b9b9b9;
+}
+/* line 149, ../scss/style.scss */
+.body .leg--l .foot {
+  background: #8f8f8f;
+}

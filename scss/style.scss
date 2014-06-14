@@ -20,3 +20,136 @@ body {
 a {
 	text-decoration: none;
 }
+
+.body {
+	height: $bodyheight;
+	width: $bodyheight/4;
+
+	margin: 25px auto;
+	
+	.head,
+	.arm,
+	.torso,
+	.leg
+	{
+		position: absolute;
+	}
+
+	.upper,
+	.lower,
+	.hand
+	{
+		transform-origin: top;
+	}
+
+	.head {
+		height: $headsize;
+		width: $headsize;
+		z-index: 9;
+		border-radius: 50%;
+		margin-left: -$bodymargin;
+
+		background: $headcolor;
+		
+	}
+
+	.torso {
+
+		margin-top: $headsize - 10px;
+
+		.neck {
+			height: $torsoheight--neck;
+			width: $bodywidth * 0.55;
+			margin-left: $bodywidth * 0.225;
+
+			background: $headcolor;
+		}
+
+		.t--torso {
+			height: $torsoheight--torso;
+			width: $bodywidth;
+			
+			background: $torsocolor;
+		}
+	}
+
+	.arm {
+
+		margin-top: $headsize + $torsoheight--neck + ($torsoheight--neck / 6);
+		margin-left: $bodywidth / 4;
+
+		.upper,
+		.lower {
+			background: $armcolor;
+		}
+		
+		.upper {
+			height: $armheight--upper;
+			width: $bodywidth / 2;
+		}
+		
+		.lower {
+			height: $armheight--lower;
+			width: $bodywidth / 2;
+		}
+		
+		.hand {
+			height: $handheight;
+			width: $handheight;
+
+			border-radius: 50%;
+			background: $headcolor;
+		}
+	}
+
+	.arm--r {
+		z-index: 10;
+
+		.upper,
+		.lower {
+			background: darken($armcolor, 10%);
+		}
+	}
+
+	.leg {
+		margin-top: $headsize + $torsoheight - 10px;
+		
+		.upper,
+		.lower,
+		.foot {
+			background: $legcolor;
+		}
+
+		.upper {
+			height: $legheight--upper;
+			width: $bodywidth;
+		}
+		
+		.lower {
+			height: $legheight--lower;
+			width: $bodywidth;
+		}
+		
+		.foot {
+			height: $footheight;
+			width: $bodywidth * 1.35;
+
+			background: $footcolor;
+		}
+	}
+
+	.leg--l {
+
+		.upper,
+		.lower
+		{
+			background: darken($legcolor, 10%);
+		}
+
+		.foot {
+			background: darken($footcolor, 10%);
+		}
+
+	}
+
+}
