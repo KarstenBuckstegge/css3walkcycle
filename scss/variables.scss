@@ -17,18 +17,23 @@ $bodywidth: $bodyheight*0.12;
 
 $headsize: $bodyheight*0.143;
 
-$torsoheight: $bodyheight*0.357;
-$torsoheight--neck: $torsoheight*0.1;
-$torsoheight--torso: $torsoheight*0.9;
+$torsoheight: $bodyheight*0.429;
+$torsoheight--neck: $torsoheight*0.07;
+$torsoheight--torso: $torsoheight*0.73;
+$torsoheight--hip: $torsoheight*0.2;
 
 $armheight: $bodyheight*0.45;
 $armheight--upper: $armheight*0.425;
 $armheight--lower: $armheight*0.425;
 $handheight: $armheight*0.14;
 
-$legheight: $bodyheight*0.5;
-$legheight--upper: $legheight*0.475;
-$legheight--lower: $legheight*0.425;
-$footheight: $legheight*0.1;
+$legheight: $bodyheight*0.429;
+$legheight--upper: $legheight*0.435;
+$legheight--lower: $legheight*0.435;
+$footheight: $legheight*0.14;
 
 $bodymargin: ($headsize - $bodywidth) / 2;
+
+// animation properties
+
+$percentage: 100% / 8;

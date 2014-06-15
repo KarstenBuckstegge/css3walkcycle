@@ -1,14 +1,16 @@
-// SCSS Imports. Everything needed to complement the project
-
 // -- Modules
+
 @import "variables";
 @import "mixins";
 
 
 // -- Third Party Stuff
-@import "_normalize";
 
-// The Styling-Part
+@import "_normalize";
+@import "compass/css3/transform";
+
+
+// ==================== Body Setup ==========================
 
 body {
 	font-family: $mainfont;
@@ -39,7 +41,8 @@ a {
 	.lower,
 	.hand
 	{
-		transform-origin: top;
+		-webkit-transform-origin: top;
+				transform-origin: top;
 	}
 
 	.head {
@@ -71,6 +74,13 @@ a {
 			
 			background: $torsocolor;
 		}
+
+		.hip {
+			height: $torsoheight--hip;
+			width: $bodywidth;
+			
+			background: linear-gradient($torsocolor, $torsocolor 50%, $legcolor 50%, $legcolor);
+		}
 	}
 
 	.arm {
@@ -91,6 +101,8 @@ a {
 		.lower {
 			height: $armheight--lower;
 			width: $bodywidth / 2;
+
+			margin-top: -15px;
 		}
 		
 		.hand {
@@ -112,27 +124,31 @@ a {
 	}
 
 	.leg {
-		margin-top: $headsize + $torsoheight - 10px;
+		margin-top: $headsize + $torsoheight - 25px;
 		
 		.upper,
-		.lower,
-		.foot {
+		.lower
+		{
 			background: $legcolor;
+			width: $bodywidth * 0.8;
+			margin-left: $bodywidth * 0.1;
 		}
 
 		.upper {
 			height: $legheight--upper;
-			width: $bodywidth;
 		}
 		
 		.lower {
 			height: $legheight--lower;
-			width: $bodywidth;
+
+			margin-top: -15px;
 		}
 		
 		.foot {
 			height: $footheight;
-			width: $bodywidth * 1.35;
+			width: $bodywidth * 1.25;
+			margin-top: -15px;
+			margin-left: $bodywidth * 0.1;
 
 			background: $footcolor;
 		}
@@ -152,4 +168,36 @@ a {
 
 	}
 
+	.leg--r {
+		
+		.upper {
+			@include animation('leg--upper 3.72s infinite linear');
+		}
+
+		.lower {
+			@include animation('leg--lower 3.72s infinite linear');
+		}
+
+		.foot {
+			@include animation('leg--foot 3.72s infinite linear');
+		}
+	}
+
 }
+
+
+// ==================== Animations ==========================
+
+@-webkit-keyframes leg--upper {
+	@include keyframes(-20deg, 0px, 0px, -42deg, 0px, 0px, -47deg, 0px, 0px, -29deg, 0px, 0px, 5deg, 0px, 0px, 20deg, 0px, 0px, 36deg, 0px, 0px, 20deg, 0px, 0px)
+}
+
+@-webkit-keyframes leg--lower {
+	@include keyframes(55deg, 9px, -43px, 38deg, 26px, -68px, -47deg, 57px, 30px, 3deg, 41px, -11px, 5deg, -7px, 4px, 20deg, -27px, 13px, 36deg, -46px, 18px, 40deg, -21px, 13px)
+}
+
+@-webkit-keyframes leg--foot {
+	@include keyframes(55deg, -62px, 22px, 38deg, -29px, -30px, -47deg, 130px, 61px, 0deg, 37px, 0px, 0deg, -15px, 11px, 13deg, -60px, 13px, 33deg, -100px, 47px, 51deg, -72px, 66px)
+}
+
+

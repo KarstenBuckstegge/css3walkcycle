@@ -1,3 +1,46 @@
-@mixin foo ($foo) {
-	//foofoo
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};      
+}
+
+
+// arguments set to go like this: rotate, translate-x, translate-y, rotate, translate-x,...
+
+// , $i, $i_a, $i_b, $j, $j_a, $j_b, $k, $k_a, $k_b, $l, $l_a, $l_b, $m, $m_a, $m_b, $n, $n_a, $n_b, $o, $o_a, $o_b, $p, $p_a, $p_b, $q, $q_a, $q_b, $r, $r_a, $s, $s_a, $t, $t_a, $u, $u_a, $v, $v_a, $w, $w_a, $x, $x_a, $y, $y_a, $z, $z_a, $aa, $aa_a, $ba, $ba_a, $ca, $ca_a, $da, $da_a, $ea, $ea_a, $fa, $fa_a
+
+@mixin keyframes($a, $a_a, $a_b, $b, $b_a, $b_b, $c, $c_a, $c_b, $d, $d_a, $d_b, $e, $e_a, $e_b, $f, $f_a, $f_b, $g, $g_a, $g_b, $h, $h_a, $h_b) 
+{
+	#{$percentage*0} { -webkit-transform: rotate(#{$a}) translate(#{$a_a}, #{$a_b}); }
+	#{$percentage*1} { -webkit-transform: rotate(#{$b}) translate(#{$b_a}, #{$b_b}); }
+	#{$percentage*2} { -webkit-transform: rotate(#{$c}) translate(#{$c_a}, #{$c_b}); }
+	#{$percentage*3} { -webkit-transform: rotate(#{$d}) translate(#{$d_a}, #{$d_b}); }
+	#{$percentage*4} { -webkit-transform: rotate(#{$e}) translate(#{$e_a}, #{$e_b}); }
+	#{$percentage*5} { -webkit-transform: rotate(#{$f}) translate(#{$f_a}, #{$f_b}); }
+	#{$percentage*6} { -webkit-transform: rotate(#{$g}) translate(#{$g_a}, #{$g_b}); }
+	#{$percentage*7} { -webkit-transform: rotate(#{$h}) translate(#{$h_a}, #{$h_b}); }
+	// #{$percentage*8} { transform: rotate(#{$i}) translate(#{$i_a}, #{$i_b}); }
+	// #{$percentage*9} { transform: rotate(#{$j}) translate(#{$j_a}, #{$j_b}); }
+	// #{$percentage*10} { transform: rotate(#{$k}) translate(#{$k_a}, #{$k_b}); }
+	// #{$percentage*11} { transform: rotate(#{$l}) translate(#{$l_a}, #{$l_b}); }
+	// #{$percentage*12} { transform: rotate(#{$m}) translate(#{$m_a}, #{$m_b}); }
+	// #{$percentage*13} { transform: rotate(#{$n}) translate(#{$n_a}, #{$n_b}); }
+	// #{$percentage*14} { transform: rotate(#{$o}) translate(#{$o_a}, #{$o_b}); }
+	// #{$percentage*15} { transform: rotate(#{$p}) translate(#{$p_a}, #{$p_b}); }
+	// #{$percentage*16} { transform: rotate(#{$q}) translate(#{$q_a}, #{$q_b}); }
+	// #{$percentage*17} { transform: rotate(#{$r}) translate(#{$r_a}); }
+	// #{$percentage*18} { transform: rotate(#{$s}) translate(#{$s_a}); }
+	// #{$percentage*19} { transform: rotate(#{$t}) translate(#{$t_a}); }
+	// #{$percentage*20} { transform: rotate(#{$u}) translate(#{$u_a}); }
+	// #{$percentage*21} { transform: rotate(#{$v}) translate(#{$v_q}); }
+	// #{$percentage*22} { transform: rotate(#{$w}) translate(#{$w_a}); }
+	// #{$percentage*23} { transform: rotate(#{$x}) translate(#{$x_a}); }
+	// #{$percentage*24} { transform: rotate(#{$y}) translate(#{$y_a}); }
+	// #{$percentage*25} { transform: rotate(#{$z}) translate(#{$z_a}); }
+	// #{$percentage*26} { transform: rotate(#{$aa}) translate(#{$aa_a}); }
+	// #{$percentage*27} { transform: rotate(#{$ba}) translate(#{$ba_a}); }
+	// #{$percentage*28} { transform: rotate(#{$ca}) translate(#{$ca_a}); }
+	// #{$percentage*29} { transform: rotate(#{$da}) translate(#{$da_a}); }
+	// #{$percentage*30} { transform: rotate(#{$ea}) translate(#{$ea_a}); }
+	// #{$percentage*31} { transform: rotate(#{$fa}) translate(#{$fa_a}); }
+	#{$percentage*8} { -webkit-transform: rotate(#{$a}) translate(#{$a_a}); }
 }
