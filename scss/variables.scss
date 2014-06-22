@@ -28,8 +28,8 @@ $armheight--lower: $armheight*0.425;
 $handheight: $armheight*0.14;
 
 $legheight: $bodyheight*0.429;
-$legheight--upper: $legheight*0.435;
-$legheight--lower: $legheight*0.435;
+$legheight--upper: $legheight*0.495;
+$legheight--lower: $legheight*0.455;
 $footheight: $legheight*0.14;
 
 $bodymargin: ($headsize - $bodywidth) / 2;

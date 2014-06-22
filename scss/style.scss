@@ -1,3 +1,6 @@
+// TODO: Schatten
+
+
 // -- Modules
 
 @import "variables";
@@ -25,7 +28,7 @@ a {
 
 .body {
 	height: $bodyheight;
-	width: $bodyheight/4;
+	width: $bodyheight * 0.25;
 
 	margin: 25px auto;
 	
@@ -37,6 +40,8 @@ a {
 		position: absolute;
 	}
 
+	.leg,
+	.arm,
 	.upper,
 	.lower,
 	.hand
@@ -59,6 +64,7 @@ a {
 	.torso {
 
 		margin-top: $headsize - 10px;
+		z-index: 5;
 
 		.neck {
 			height: $torsoheight--neck;
@@ -78,6 +84,7 @@ a {
 		.hip {
 			height: $torsoheight--hip;
 			width: $bodywidth;
+			border-radius: 0px 0px $bodywidth * 0.5 $bodywidth * 0.5;
 			
 			background: linear-gradient($torsocolor, $torsocolor 50%, $legcolor 50%, $legcolor);
 		}
@@ -85,8 +92,8 @@ a {
 
 	.arm {
 
-		margin-top: $headsize + $torsoheight--neck + ($torsoheight--neck / 6);
-		margin-left: $bodywidth / 4;
+		margin-top: $headsize + $torsoheight--neck + ($torsoheight--neck * 0.166);
+		margin-left: $bodywidth * 0.25;
 
 		.upper,
 		.lower {
@@ -95,12 +102,13 @@ a {
 		
 		.upper {
 			height: $armheight--upper;
-			width: $bodywidth / 2;
+			width: $bodywidth * 0.5;
 		}
 		
 		.lower {
 			height: $armheight--lower;
-			width: $bodywidth / 2;
+			width: $bodywidth * 0.5;
+			border-radius: $bodywidth * 0.2;
 
 			margin-top: -15px;
 		}
@@ -124,37 +132,51 @@ a {
 	}
 
 	.leg {
-		margin-top: $headsize + $torsoheight - 25px;
+		margin-top: $headsize + $torsoheight - 35px;
 		
 		.upper,
 		.lower
 		{
-			background: $legcolor;
 			width: $bodywidth * 0.8;
 			margin-left: $bodywidth * 0.1;
+			background: $legcolor;
 		}
 
 		.upper {
 			height: $legheight--upper;
+			border-radius: 0px 0px $bodywidth * 0.4 $bodywidth * 0.4;
 		}
 		
 		.lower {
 			height: $legheight--lower;
-
-			margin-top: -15px;
+			margin-top: -($bodywidth * 0.4);
+			border-radius: $bodywidth * 0.4 $bodywidth * 0.4 0px 0px;
 		}
 		
 		.foot {
 			height: $footheight;
-			width: $bodywidth * 1.25;
-			margin-top: -15px;
-			margin-left: $bodywidth * 0.1;
+			width: $bodywidth * 0.9;
+			position: absolute;
+			top: $legheight--lower - 15px;
 
 			background: $footcolor;
+
+			&:after {
+				content: "";
+				width: 0px;
+				height: $footheight * 0.5;
+				position: absolute;
+				margin-left: ($bodywidth * 0.9) - 2px;
+
+				border-top: $footheight*0.5 solid transparent;
+				border-left: $footheight*1.1 solid $footcolor;
+			}
 		}
 	}
 
 	.leg--l {
+
+		@include animation('leg 1.72s infinite linear');
 
 		.upper,
 		.lower
@@ -162,24 +184,34 @@ a {
 			background: darken($legcolor, 10%);
 		}
 
+		.lower {
+			@include animation('leg--lower 1.72s infinite linear'); 
+		}
+
 		.foot {
 			background: darken($footcolor, 10%);
+
+			&:after {
+				border-left: $footheight*1.1 solid darken($footcolor, 10%);
+			}
 		}
 
 	}
 
 	.leg--r {
+
+		@include animation('leg 1.72s 0.86s infinite linear');
 		
 		.upper {
-			@include animation('leg--upper 3.72s infinite linear');
 		}
 
 		.lower {
-			@include animation('leg--lower 3.72s infinite linear');
+			// @include animation('leg--lower 3.72s infinite linear');
+
+			@include animation('leg--lower 1.72s 0.86s infinite linear'); 
 		}
 
 		.foot {
-			@include animation('leg--foot 3.72s infinite linear');
 		}
 	}
 
@@ -188,16 +220,28 @@ a {
 
 // ==================== Animations ==========================
 
-@-webkit-keyframes leg--upper {
-	@include keyframes(-20deg, 0px, 0px, -42deg, 0px, 0px, -47deg, 0px, 0px, -29deg, 0px, 0px, 5deg, 0px, 0px, 20deg, 0px, 0px, 36deg, 0px, 0px, 20deg, 0px, 0px)
+@-webkit-keyframes leg {
+	0%, 100% {-webkit-transform: rotate(-20deg);}
+	50% 	 {-webkit-transform: rotate(20deg);}
 }
 
 @-webkit-keyframes leg--lower {
-	@include keyframes(55deg, 9px, -43px, 38deg, 26px, -68px, -47deg, 57px, 30px, 3deg, 41px, -11px, 5deg, -7px, 4px, 20deg, -27px, 13px, 36deg, -46px, 18px, 40deg, -21px, 13px)
+	0%, 100% {-webkit-transform: rotate(0deg);}
+	35%      {-webkit-transform: rotate(0deg);}
+	50% 	 {-webkit-transform: rotate(45deg);}
+	75%		 {-webkit-transform: rotate(55deg);}
 }
 
-@-webkit-keyframes leg--foot {
-	@include keyframes(55deg, -62px, 22px, 38deg, -29px, -30px, -47deg, 130px, 61px, 0deg, 37px, 0px, 0deg, -15px, 11px, 13deg, -60px, 13px, 33deg, -100px, 47px, 51deg, -72px, 66px)
-}
+// @-webkit-keyframes leg--upper {
+// 	@include keyframes(-20deg, 0px, 0px, -42deg, 0px, 0px, -47deg, 0px, 0px, -29deg, 0px, 0px, 5deg, 0px, 0px, 20deg, 0px, 0px, 36deg, 0px, 0px, 20deg, 0px, 0px)
+// }
+
+// @-webkit-keyframes leg--lower {
+// 	@include keyframes(55deg, 9px, -43px, 38deg, 26px, -68px, -47deg, 57px, 30px, 3deg, 41px, -11px, 5deg, -7px, 4px, 20deg, -27px, 13px, 36deg, -46px, 18px, 40deg, -21px, 13px)
+// }
+
+// @-webkit-keyframes leg--foot {
+// 	@include keyframes(55deg, -62px, 22px, 38deg, -29px, -30px, -47deg, 130px, 61px, 0deg, 37px, 0px, 0deg, -15px, 11px, 13deg, -60px, 13px, 33deg, -100px, 47px, 51deg, -72px, 66px)
+// }
 
 

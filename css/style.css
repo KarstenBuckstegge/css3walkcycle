@@ -282,7 +282,7 @@ table {
   border-spacing: 0;
 }
 
-/* line 15, ../scss/style.scss */
+/* line 18, ../scss/style.scss */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -290,32 +290,34 @@ body {
   line-height: 1.25rem;
 }
 
-/* line 22, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 26, ../scss/style.scss */
+/* line 29, ../scss/style.scss */
 .body {
   height: 500px;
   width: 125px;
   margin: 25px auto;
 }
-/* line 36, ../scss/style.scss */
+/* line 39, ../scss/style.scss */
 .body .head,
 .body .arm,
 .body .torso,
 .body .leg {
   position: absolute;
 }
-/* line 43, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
+.body .leg,
+.body .arm,
 .body .upper,
 .body .lower,
 .body .hand {
   -webkit-transform-origin: top;
   transform-origin: top;
 }
-/* line 48, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 .body .head {
   height: 71.5px;
   width: 71.5px;
@@ -324,256 +326,173 @@ a {
   margin-left: -5.75px;
   background: lightgreen;
 }
-/* line 59, ../scss/style.scss */
+/* line 64, ../scss/style.scss */
 .body .torso {
   margin-top: 61.5px;
+  z-index: 5;
 }
-/* line 63, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 .body .torso .neck {
   height: 15.015px;
   width: 33px;
   margin-left: 13.5px;
   background: lightgreen;
 }
-/* line 71, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 .body .torso .t--torso {
   height: 156.585px;
   width: 60px;
   background: lightblue;
 }
-/* line 78, ../scss/style.scss */
+/* line 84, ../scss/style.scss */
 .body .torso .hip {
   height: 42.9px;
   width: 60px;
+  border-radius: 0px 0px 30px 30px;
   background: linear-gradient(#add8e6, #add8e6 50%, #d3d3d3 50%, #d3d3d3);
 }
-/* line 86, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 .body .arm {
-  margin-top: 89.0175px;
+  margin-top: 89.00749px;
   margin-left: 15px;
 }
-/* line 92, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 .body .arm .upper,
 .body .arm .lower {
   background: lightblue;
 }
-/* line 96, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 .body .arm .upper {
   height: 95.625px;
   width: 30px;
 }
-/* line 101, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 .body .arm .lower {
   height: 95.625px;
   width: 30px;
+  border-radius: 12px;
   margin-top: -15px;
 }
-/* line 108, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .body .arm .hand {
   height: 31.5px;
   width: 31.5px;
   border-radius: 50%;
   background: lightgreen;
 }
-/* line 117, ../scss/style.scss */
+/* line 125, ../scss/style.scss */
 .body .arm--r {
   z-index: 10;
 }
-/* line 121, ../scss/style.scss */
+/* line 129, ../scss/style.scss */
 .body .arm--r .upper,
 .body .arm--r .lower {
   background: #86c5da;
 }
-/* line 126, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .body .leg {
-  margin-top: 261px;
+  margin-top: 251px;
 }
-/* line 131, ../scss/style.scss */
+/* line 139, ../scss/style.scss */
 .body .leg .upper,
 .body .leg .lower {
-  background: lightgrey;
   width: 48px;
   margin-left: 6px;
+  background: lightgrey;
 }
-/* line 137, ../scss/style.scss */
+/* line 145, ../scss/style.scss */
 .body .leg .upper {
-  height: 93.3075px;
+  height: 106.1775px;
+  border-radius: 0px 0px 24px 24px;
 }
-/* line 141, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .body .leg .lower {
-  height: 93.3075px;
-  margin-top: -15px;
+  height: 97.5975px;
+  margin-top: -24px;
+  border-radius: 24px 24px 0px 0px;
 }
-/* line 147, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 .body .leg .foot {
   height: 30.03px;
-  width: 75px;
-  margin-top: -15px;
-  margin-left: 6px;
+  width: 54px;
+  position: absolute;
+  top: 82.5975px;
   background: darkgrey;
 }
-/* line 161, ../scss/style.scss */
+/* line 164, ../scss/style.scss */
+.body .leg .foot:after {
+  content: "";
+  width: 0px;
+  height: 15.015px;
+  position: absolute;
+  margin-left: 52px;
+  border-top: 15.015px solid transparent;
+  border-left: 33.033px solid darkgrey;
+}
+/* line 177, ../scss/style.scss */
+.body .leg--l {
+  -webkit-animation: leg 1.72s infinite linear;
+  animation: leg 1.72s infinite linear;
+}
+/* line 183, ../scss/style.scss */
 .body .leg--l .upper,
 .body .leg--l .lower {
   background: #b9b9b9;
 }
-/* line 165, ../scss/style.scss */
+/* line 187, ../scss/style.scss */
+.body .leg--l .lower {
+  -webkit-animation: leg--lower 1.72s infinite linear;
+  animation: leg--lower 1.72s infinite linear;
+}
+/* line 191, ../scss/style.scss */
 .body .leg--l .foot {
   background: #8f8f8f;
 }
-/* line 173, ../scss/style.scss */
-.body .leg--r .upper {
-  -webkit-animation: leg--upper 3.72s infinite linear;
-  animation: leg--upper 3.72s infinite linear;
+/* line 194, ../scss/style.scss */
+.body .leg--l .foot:after {
+  border-left: 33.033px solid #8f8f8f;
 }
-/* line 177, ../scss/style.scss */
+/* line 201, ../scss/style.scss */
+.body .leg--r {
+  -webkit-animation: leg 1.72s 0.86s infinite linear;
+  animation: leg 1.72s 0.86s infinite linear;
+}
+/* line 208, ../scss/style.scss */
 .body .leg--r .lower {
-  -webkit-animation: leg--lower 3.72s infinite linear;
-  animation: leg--lower 3.72s infinite linear;
-}
-/* line 181, ../scss/style.scss */
-.body .leg--r .foot {
-  -webkit-animation: leg--foot 3.72s infinite linear;
-  animation: leg--foot 3.72s infinite linear;
+  -webkit-animation: leg--lower 1.72s 0.86s infinite linear;
+  animation: leg--lower 1.72s 0.86s infinite linear;
 }
 
-@-webkit-keyframes leg--upper {
-  /* line 13, ../scss/mixins.scss */
-  0% {
-    -webkit-transform: rotate(-20deg) translate(0px, 0px);
+@-webkit-keyframes leg {
+  /* line 224, ../scss/style.scss */
+  0%, 100% {
+    -webkit-transform: rotate(-20deg);
   }
 
-  /* line 14, ../scss/mixins.scss */
-  12.5% {
-    -webkit-transform: rotate(-42deg) translate(0px, 0px);
-  }
-
-  /* line 15, ../scss/mixins.scss */
-  25% {
-    -webkit-transform: rotate(-47deg) translate(0px, 0px);
-  }
-
-  /* line 16, ../scss/mixins.scss */
-  37.5% {
-    -webkit-transform: rotate(-29deg) translate(0px, 0px);
-  }
-
-  /* line 17, ../scss/mixins.scss */
+  /* line 225, ../scss/style.scss */
   50% {
-    -webkit-transform: rotate(5deg) translate(0px, 0px);
-  }
-
-  /* line 18, ../scss/mixins.scss */
-  62.5% {
-    -webkit-transform: rotate(20deg) translate(0px, 0px);
-  }
-
-  /* line 19, ../scss/mixins.scss */
-  75% {
-    -webkit-transform: rotate(36deg) translate(0px, 0px);
-  }
-
-  /* line 20, ../scss/mixins.scss */
-  87.5% {
-    -webkit-transform: rotate(20deg) translate(0px, 0px);
-  }
-
-  /* line 45, ../scss/mixins.scss */
-  100% {
-    -webkit-transform: rotate(-20deg) translate(0px);
+    -webkit-transform: rotate(20deg);
   }
 }
 
 @-webkit-keyframes leg--lower {
-  /* line 13, ../scss/mixins.scss */
-  0% {
-    -webkit-transform: rotate(55deg) translate(9px, -43px);
+  /* line 229, ../scss/style.scss */
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
   }
 
-  /* line 14, ../scss/mixins.scss */
-  12.5% {
-    -webkit-transform: rotate(38deg) translate(26px, -68px);
+  /* line 230, ../scss/style.scss */
+  35% {
+    -webkit-transform: rotate(0deg);
   }
 
-  /* line 15, ../scss/mixins.scss */
-  25% {
-    -webkit-transform: rotate(-47deg) translate(57px, 30px);
-  }
-
-  /* line 16, ../scss/mixins.scss */
-  37.5% {
-    -webkit-transform: rotate(3deg) translate(41px, -11px);
-  }
-
-  /* line 17, ../scss/mixins.scss */
+  /* line 231, ../scss/style.scss */
   50% {
-    -webkit-transform: rotate(5deg) translate(-7px, 4px);
+    -webkit-transform: rotate(45deg);
   }
 
-  /* line 18, ../scss/mixins.scss */
-  62.5% {
-    -webkit-transform: rotate(20deg) translate(-27px, 13px);
-  }
-
-  /* line 19, ../scss/mixins.scss */
+  /* line 232, ../scss/style.scss */
   75% {
-    -webkit-transform: rotate(36deg) translate(-46px, 18px);
-  }
-
-  /* line 20, ../scss/mixins.scss */
-  87.5% {
-    -webkit-transform: rotate(40deg) translate(-21px, 13px);
-  }
-
-  /* line 45, ../scss/mixins.scss */
-  100% {
-    -webkit-transform: rotate(55deg) translate(9px);
-  }
-}
-
-@-webkit-keyframes leg--foot {
-  /* line 13, ../scss/mixins.scss */
-  0% {
-    -webkit-transform: rotate(55deg) translate(-62px, 22px);
-  }
-
-  /* line 14, ../scss/mixins.scss */
-  12.5% {
-    -webkit-transform: rotate(38deg) translate(-29px, -30px);
-  }
-
-  /* line 15, ../scss/mixins.scss */
-  25% {
-    -webkit-transform: rotate(-47deg) translate(130px, 61px);
-  }
-
-  /* line 16, ../scss/mixins.scss */
-  37.5% {
-    -webkit-transform: rotate(0deg) translate(37px, 0px);
-  }
-
-  /* line 17, ../scss/mixins.scss */
-  50% {
-    -webkit-transform: rotate(0deg) translate(-15px, 11px);
-  }
-
-  /* line 18, ../scss/mixins.scss */
-  62.5% {
-    -webkit-transform: rotate(13deg) translate(-60px, 13px);
-  }
-
-  /* line 19, ../scss/mixins.scss */
-  75% {
-    -webkit-transform: rotate(33deg) translate(-100px, 47px);
-  }
-
-  /* line 20, ../scss/mixins.scss */
-  87.5% {
-    -webkit-transform: rotate(51deg) translate(-72px, 66px);
-  }
-
-  /* line 45, ../scss/mixins.scss */
-  100% {
-    -webkit-transform: rotate(55deg) translate(-62px);
+    -webkit-transform: rotate(55deg);
   }
 }
