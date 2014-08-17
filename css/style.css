@@ -327,56 +327,58 @@ a {
   border-radius: 50%;
   margin-left: -5.75px;
   background: lightgreen;
+  -webkit-animation: head 2s infinite linear;
+  animation: head 2s infinite linear;
 }
-/* line 65, ../scss/style.scss */
+/* line 66, ../scss/style.scss */
 .body .torso {
   margin-top: 61.5px;
   z-index: 5;
 }
-/* line 70, ../scss/style.scss */
+/* line 71, ../scss/style.scss */
 .body .torso .neck {
   height: 15.015px;
   width: 33px;
   margin-left: 13.5px;
   background: lightgreen;
 }
-/* line 78, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 .body .torso .t--torso {
   height: 156.585px;
   width: 60px;
   background: lightblue;
 }
-/* line 85, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .body .torso .hip {
   height: 42.9px;
   width: 60px;
   border-radius: 0px 0px 30px 30px;
   background: linear-gradient(#add8e6, #add8e6 50%, #d3d3d3 50%, #d3d3d3);
 }
-/* line 94, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 .body .arm {
   margin-top: 89.00749px;
   margin-left: 15px;
 }
-/* line 100, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 .body .arm .upper,
 .body .arm .lower {
   background: lightblue;
 }
-/* line 104, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 .body .arm .upper {
   height: 95.625px;
   width: 30px;
   border-radius: 12px;
 }
-/* line 111, ../scss/style.scss */
+/* line 112, ../scss/style.scss */
 .body .arm .lower {
   height: 95.625px;
   width: 30px;
   margin-top: -15px;
   border-radius: 12px;
 }
-/* line 119, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .body .arm .hand {
   height: 31.5px;
   width: 31.5px;
@@ -385,38 +387,55 @@ a {
   border-radius: 50%;
   background: lightgreen;
 }
-/* line 130, ../scss/style.scss */
+/* line 131, ../scss/style.scss */
 .body .arm--r {
   z-index: 10;
+  -webkit-animation: arm 2s -1s infinite linear;
+  animation: arm 2s -1s infinite linear;
 }
-/* line 134, ../scss/style.scss */
+/* line 136, ../scss/style.scss */
+.body .arm--r .lower {
+  -webkit-animation: arm--lower 2s -1s infinite linear;
+  animation: arm--lower 2s -1s infinite linear;
+}
+/* line 141, ../scss/style.scss */
 .body .arm--r .upper,
 .body .arm--r .lower {
   background: #86c5da;
 }
-/* line 139, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
+.body .arm--l {
+  -webkit-animation: arm 2s infinite linear;
+  animation: arm 2s infinite linear;
+}
+/* line 149, ../scss/style.scss */
+.body .arm--l .lower {
+  -webkit-animation: arm--lower 2s infinite linear;
+  animation: arm--lower 2s infinite linear;
+}
+/* line 154, ../scss/style.scss */
 .body .leg {
   margin-top: 251px;
 }
-/* line 144, ../scss/style.scss */
+/* line 159, ../scss/style.scss */
 .body .leg .upper,
 .body .leg .lower {
   width: 48px;
   margin-left: 6px;
   background: lightgrey;
 }
-/* line 150, ../scss/style.scss */
+/* line 165, ../scss/style.scss */
 .body .leg .upper {
   height: 106.1775px;
   border-radius: 0px 0px 24px 24px;
 }
-/* line 155, ../scss/style.scss */
+/* line 170, ../scss/style.scss */
 .body .leg .lower {
   height: 97.5975px;
   margin-top: -24px;
   border-radius: 24px 24px 0px 0px;
 }
-/* line 161, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 .body .leg .foot {
   height: 30.03px;
   width: 48px;
@@ -424,7 +443,7 @@ a {
   margin-top: 82.5975px;
   background: darkgrey;
 }
-/* line 169, ../scss/style.scss */
+/* line 184, ../scss/style.scss */
 .body .leg .foot:after {
   content: "";
   width: 0px;
@@ -434,156 +453,207 @@ a {
   border-top: 15.015px solid transparent;
   border-left: 30.03px solid darkgrey;
 }
-/* line 182, ../scss/style.scss */
+/* line 197, ../scss/style.scss */
 .body .leg--l {
   -webkit-animation: leg 2s -1s infinite linear;
   animation: leg 2s -1s infinite linear;
 }
-/* line 187, ../scss/style.scss */
+/* line 202, ../scss/style.scss */
 .body .leg--l .upper,
 .body .leg--l .lower {
   background: #b9b9b9;
 }
-/* line 191, ../scss/style.scss */
+/* line 206, ../scss/style.scss */
 .body .leg--l .lower {
   -webkit-animation: leg--lower 2s -1s infinite linear;
   animation: leg--lower 2s -1s infinite linear;
 }
-/* line 195, ../scss/style.scss */
+/* line 210, ../scss/style.scss */
 .body .leg--l .foot {
   background: #8f8f8f;
   -webkit-animation: foot 2s -1s infinite linear;
   animation: foot 2s -1s infinite linear;
 }
-/* line 200, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 .body .leg--l .foot:after {
   border-left: 33.033px solid #8f8f8f;
 }
-/* line 207, ../scss/style.scss */
+/* line 222, ../scss/style.scss */
 .body .leg--r {
   -webkit-animation: leg 2s infinite linear;
   animation: leg 2s infinite linear;
 }
-/* line 210, ../scss/style.scss */
+/* line 225, ../scss/style.scss */
 .body .leg--r .lower {
   -webkit-animation: leg--lower 2s infinite linear;
   animation: leg--lower 2s infinite linear;
 }
-/* line 214, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 .body .leg--r .foot {
   -webkit-animation: foot 2s infinite linear;
   animation: foot 2s infinite linear;
 }
 
-/* line 221, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 hr {
   margin-top: -80px;
 }
 
 @-webkit-keyframes body {
-  /* line 229, ../scss/style.scss */
+  /* line 246, ../scss/style.scss */
   0%, 100% {
     -webkit-transform: translateY(12px);
   }
 
-  /* line 230, ../scss/style.scss */
+  /* line 247, ../scss/style.scss */
   25% {
     -webkit-transform: translateY(0px);
   }
 
-  /* line 231, ../scss/style.scss */
+  /* line 248, ../scss/style.scss */
   50% {
     -webkit-transform: translateY(12px);
   }
 
-  /* line 232, ../scss/style.scss */
+  /* line 249, ../scss/style.scss */
   75% {
     -webkit-transform: translateY(0px);
   }
 }
 
 @-webkit-keyframes leg {
-  /* line 236, ../scss/style.scss */
+  /* line 255, ../scss/style.scss */
   0%, 100% {
     -webkit-transform: rotate(-40deg);
   }
 
-  /* line 237, ../scss/style.scss */
+  /* line 256, ../scss/style.scss */
   15% {
     -webkit-transform: rotate(-18deg);
   }
 
-  /* line 238, ../scss/style.scss */
+  /* line 257, ../scss/style.scss */
   50% {
     -webkit-transform: rotate(40deg);
   }
 
-  /* line 239, ../scss/style.scss */
+  /* line 258, ../scss/style.scss */
   75% {
-    -webkit-transform: rotate(-35deg);
+    -webkit-transform: rotate(-25deg);
+  }
+
+  /* line 259, ../scss/style.scss */
+  80% {
+    -webkit-transform: rotate(-40deg);
   }
 }
 
 @-webkit-keyframes leg--lower {
-  /* line 243, ../scss/style.scss */
+  /* line 263, ../scss/style.scss */
   0%, 100% {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(5deg);
   }
 
-  /* line 244, ../scss/style.scss */
+  /* line 264, ../scss/style.scss */
   15% {
     -webkit-transform: rotate(20deg);
   }
 
-  /* line 245, ../scss/style.scss */
+  /* line 265, ../scss/style.scss */
   35% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 246, ../scss/style.scss */
+  /* line 266, ../scss/style.scss */
   50% {
     -webkit-transform: rotate(5deg);
   }
 
-  /* line 247, ../scss/style.scss */
+  /* line 267, ../scss/style.scss */
   75% {
     -webkit-transform: rotate(100deg);
   }
 
-  /* line 248, ../scss/style.scss */
+  /* line 268, ../scss/style.scss */
   90% {
-    -webkit-transform: rotate(70deg);
+    -webkit-transform: rotate(75deg);
   }
 }
 
 @-webkit-keyframes foot {
-  /* line 252, ../scss/style.scss */
+  /* line 272, ../scss/style.scss */
   0%, 100% {
     -webkit-transform: rotate(5deg);
   }
 
-  /* line 253, ../scss/style.scss */
+  /* line 273, ../scss/style.scss */
   15% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 254, ../scss/style.scss */
+  /* line 274, ../scss/style.scss */
   35% {
     -webkit-transform: rotate(-14deg);
   }
 
-  /* line 255, ../scss/style.scss */
+  /* line 275, ../scss/style.scss */
   50% {
     -webkit-transform: rotate(-18deg);
   }
 
-  /* line 256, ../scss/style.scss */
+  /* line 276, ../scss/style.scss */
   75% {
     -webkit-transform: rotate(10deg);
   }
 
-  /* line 257, ../scss/style.scss */
+  /* line 277, ../scss/style.scss */
   90% {
     -webkit-transform: rotate(10deg);
+  }
+}
+
+@-webkit-keyframes arm {
+  /* line 283, ../scss/style.scss */
+  0%, 100% {
+    -webkit-transform: rotate(-25deg);
+  }
+
+  /* line 284, ../scss/style.scss */
+  50% {
+    -webkit-transform: rotate(25deg);
+  }
+}
+
+@-webkit-keyframes arm--lower {
+  /* line 288, ../scss/style.scss */
+  0%, 100% {
+    -webkit-transform: rotate(-15deg);
+  }
+
+  /* line 289, ../scss/style.scss */
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes head {
+  /* line 295, ../scss/style.scss */
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+  }
+
+  /* line 296, ../scss/style.scss */
+  10% {
+    -webkit-transform: translateY(2px);
+  }
+
+  /* line 297, ../scss/style.scss */
+  50% {
+    -webkit-transform: translateY(0px);
+  }
+
+  /* line 298, ../scss/style.scss */
+  60% {
+    -webkit-transform: translateY(2px);
   }
 }

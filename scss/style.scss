@@ -31,7 +31,7 @@ a {
 	width: $bodyheight * 0.25;
 	margin: 25px auto;
 
-	@include animation('body 2s infinite linear');
+	@include animation('body #{$duration} infinite linear');
 	
 	.head,
 	.arm,
@@ -60,6 +60,7 @@ a {
 
 		background: $headcolor;
 		
+		@include animation('head #{$duration} infinite linear');
 	}
 
 	.torso {
@@ -130,9 +131,23 @@ a {
 	.arm--r {
 		z-index: 10;
 
+		@include animation('arm #{$duration} #{-$duration/2} infinite linear');
+
+		.lower {
+			@include animation('arm--lower #{$duration} #{-$duration/2} infinite linear');
+		}
+
 		.upper,
 		.lower {
 			background: darken($armcolor, 10%);
+		}
+	}
+
+	.arm--l {
+		@include animation('arm #{$duration} infinite linear');
+
+		.lower {
+			@include animation('arm--lower #{$duration} infinite linear');
 		}
 	}
 
@@ -180,7 +195,7 @@ a {
 	}
 
 	.leg--l {
-		@include animation('leg 2s -1s infinite linear');
+		@include animation('leg #{$duration} #{-$duration/2} infinite linear');
 
 		.upper,
 		.lower
@@ -189,13 +204,13 @@ a {
 		}
 
 		.lower {
-			@include animation('leg--lower 2s -1s infinite linear'); 
+			@include animation('leg--lower #{$duration} #{-$duration/2} infinite linear'); 
 		}
 
 		.foot {
 			background: darken($footcolor, 10%);
 
-			@include animation('foot 2s -1s infinite linear');
+			@include animation('foot #{$duration} #{-$duration/2} infinite linear');
 
 			&:after {
 				border-left: $footheight*1.1 solid darken($footcolor, 10%);
@@ -205,14 +220,14 @@ a {
 	}
 
 	.leg--r {
-		@include animation('leg 2s infinite linear');
+		@include animation('leg #{$duration} infinite linear');
 
 		.lower {
-			@include animation('leg--lower 2s infinite linear'); 
+			@include animation('leg--lower #{$duration} infinite linear'); 
 		}
 
 		.foot {
-			@include animation('foot 2s infinite linear');
+			@include animation('foot #{$duration} infinite linear');
 		}
 	}
 
@@ -225,6 +240,8 @@ hr {
 
 // ==================== Animations ==========================
 
+
+// Body
 @-webkit-keyframes body {
 	0%, 100% {-webkit-transform: translateY(12px);}
 	25%		 {-webkit-transform: translateY(0px);}
@@ -232,41 +249,51 @@ hr {
 	75%		 {-webkit-transform: translateY(0px);}
 }
 
+
+// Legs
 @-webkit-keyframes leg {
-	0%, 100% {-webkit-transform: rotate(-40deg);}
-	15%		 {-webkit-transform: rotate(-18deg);}
-	50% 	 {-webkit-transform: rotate(40deg);}
-	75%		 {-webkit-transform: rotate(-35deg);}
+	0%, 100% {-webkit-transform: rotate(-40deg)}
+	15%		 {-webkit-transform: rotate(-18deg)}
+	50% 	 {-webkit-transform: rotate(40deg)}
+	75%		 {-webkit-transform: rotate(-25deg)}
+	80%		 {-webkit-transform: rotate(-40deg)}
 }
 
 @-webkit-keyframes leg--lower {
-	0%, 100% {-webkit-transform: rotate(0deg);}
-	15%		 {-webkit-transform: rotate(20deg);}
-	35%      {-webkit-transform: rotate(0deg);}
-	50% 	 {-webkit-transform: rotate(5deg);}
-	75%		 {-webkit-transform: rotate(100deg);}
-	90%		 {-webkit-transform: rotate(70deg);}
+	0%, 100% {-webkit-transform: rotate(5deg)} // front
+	15%		 {-webkit-transform: rotate(20deg)}
+	35%      {-webkit-transform: rotate(0deg)}
+	50% 	 {-webkit-transform: rotate(5deg)} // back
+	75%		 {-webkit-transform: rotate(100deg)}
+	90%		 {-webkit-transform: rotate(75deg)}
 }
 
 @-webkit-keyframes foot {
-	0%, 100% {-webkit-transform: rotate(5deg);}
-	15%		 {-webkit-transform: rotate(0deg);}
-	35%		 {-webkit-transform: rotate(-14deg);}
-	50%		 {-webkit-transform: rotate(-18deg);}
-	75%		 {-webkit-transform: rotate(10deg);}
-	90%		 {-webkit-transform: rotate(10deg);}
+	0%, 100% {-webkit-transform: rotate(5deg)}
+	15%		 {-webkit-transform: rotate(0deg)}
+	35%		 {-webkit-transform: rotate(-14deg)}
+	50%		 {-webkit-transform: rotate(-18deg)}
+	75%		 {-webkit-transform: rotate(10deg)}
+	90%		 {-webkit-transform: rotate(10deg)}
 }
 
-// @-webkit-keyframes leg--upper {
-// 	@include keyframes(-20deg, 0px, 0px, -42deg, 0px, 0px, -47deg, 0px, 0px, -29deg, 0px, 0px, 5deg, 0px, 0px, 20deg, 0px, 0px, 36deg, 0px, 0px, 20deg, 0px, 0px)
-// }
 
-// @-webkit-keyframes leg--lower {
-// 	@include keyframes(55deg, 9px, -43px, 38deg, 26px, -68px, -47deg, 57px, 30px, 3deg, 41px, -11px, 5deg, -7px, 4px, 20deg, -27px, 13px, 36deg, -46px, 18px, 40deg, -21px, 13px)
-// }
+// Arms
+@-webkit-keyframes arm {
+	0%, 100% {-webkit-transform: rotate(-25deg)}
+	50% 	 {-webkit-transform: rotate(25deg)}
+}
 
-// @-webkit-keyframes leg--foot {
-// 	@include keyframes(55deg, -62px, 22px, 38deg, -29px, -30px, -47deg, 130px, 61px, 0deg, 37px, 0px, 0deg, -15px, 11px, 13deg, -60px, 13px, 33deg, -100px, 47px, 51deg, -72px, 66px)
-// }
+@-webkit-keyframes arm--lower {
+	0%, 100% {-webkit-transform: rotate(-15deg)}
+	50% 	 {-webkit-transform: rotate(0deg)}
+}
 
 
+// head
+@-webkit-keyframes head {
+	0%, 100% {-webkit-transform: translateY(0px)}
+	10%		 {-webkit-transform: translateY(2px)}
+	50% 	 {-webkit-transform: translateY(0px)}
+	60%		 {-webkit-transform: translateY(2px)}
+}
