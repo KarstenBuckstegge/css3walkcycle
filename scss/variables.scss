@@ -12,7 +12,7 @@ $footcolor: darkgrey;
 
 // body measurments
 
-$bodyheight: 500px;
+$bodyheight: 450px;
 $bodywidth: $bodyheight*0.12;
 
 $headsize: $bodyheight*0.143;
@@ -36,6 +36,6 @@ $bodymargin: ($headsize - $bodywidth) / 2;
 
 // animation properties
 
-$duration: 2s;
+$duration: 1.6s;
 
 $percentage: 100% / 8;
