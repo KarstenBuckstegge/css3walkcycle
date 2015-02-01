@@ -140,15 +140,15 @@ a {
 		.lower {
 			@include animation('arm--lower #{$duration} #{-$duration/2} infinite linear');
 		}
+	}
+
+	.arm--l {
+		@include animation('arm #{$duration} infinite linear');
 
 		.upper,
 		.lower {
 			background: darken($armcolor, 10%);
 		}
-	}
-
-	.arm--l {
-		@include animation('arm #{$duration} infinite linear');
 
 		.lower {
 			@include animation('arm--lower #{$duration} infinite linear');
@@ -242,8 +242,10 @@ hr {
 }
 
 
-// ==================== Animations ==========================
-
+/* ============================================== *\
+					Animations
+			(let the magic numbers begin)
+\* ============================================== */
 
 // Body
 @keyframes body {
