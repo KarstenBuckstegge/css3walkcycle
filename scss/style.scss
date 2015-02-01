@@ -27,9 +27,11 @@ a {
 }
 
 .body {
+	position: absolute;
 	height: $bodyheight;
 	width: $bodyheight * 0.25;
-	margin: 25px auto;
+	top: .2vh;
+	left: 45%;
 
 	transform-style: preserve-3d;
 

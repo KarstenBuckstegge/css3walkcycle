@@ -297,21 +297,23 @@ a {
 
 /* line 29, ../scss/style.scss */
 .body {
+  position: absolute;
   height: 450px;
   width: 112.5px;
-  margin: 25px auto;
+  top: .2vh;
+  left: 45%;
   transform-style: preserve-3d;
   -webkit-animation: body 1.6s infinite linear;
   animation: body 1.6s infinite linear;
 }
-/* line 38, ../scss/style.scss */
+/* line 40, ../scss/style.scss */
 .body .head,
 .body .arm,
 .body .torso,
 .body .leg {
   position: absolute;
 }
-/* line 46, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .body .leg,
 .body .arm,
 .body .upper,
@@ -320,7 +322,7 @@ a {
   -webkit-transform-origin: top;
   transform-origin: top;
 }
-/* line 56, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 .body .head {
   height: 64.35px;
   width: 64.35px;
@@ -332,55 +334,55 @@ a {
   -webkit-animation: head 1.6s infinite linear;
   animation: head 1.6s infinite linear;
 }
-/* line 70, ../scss/style.scss */
+/* line 72, ../scss/style.scss */
 .body .torso {
   margin-top: 54.35px;
   z-index: 5;
 }
-/* line 75, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 .body .torso .neck {
   height: 13.5135px;
   width: 29.7px;
   margin-left: 12.15px;
   background: lightgreen;
 }
-/* line 83, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 .body .torso .t--torso {
   height: 140.9265px;
   width: 54px;
   background: lightblue;
 }
-/* line 90, ../scss/style.scss */
+/* line 92, ../scss/style.scss */
 .body .torso .hip {
   height: 38.61px;
   width: 54px;
   border-radius: 0px 0px 27px 27px;
   background: linear-gradient(lightblue, lightblue 50%, lightgrey 50%, lightgrey);
 }
-/* line 99, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 .body .arm {
   margin-top: 80.10674px;
   margin-left: 13.5px;
 }
-/* line 104, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 .body .arm .upper,
 .body .arm .lower {
   background: #86c5da;
 }
-/* line 109, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 .body .arm .upper {
   height: 86.0625px;
   width: 27px;
   border-radius: 10.8px;
 }
-/* line 116, ../scss/style.scss */
+/* line 118, ../scss/style.scss */
 .body .arm .lower {
   height: 86.0625px;
   width: 27px;
   margin-top: -15px;
   border-radius: 10.8px;
 }
-/* line 124, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 .body .arm .hand {
   height: 28.35px;
   width: 28.35px;
@@ -389,55 +391,55 @@ a {
   border-radius: 50%;
   background: lightgreen;
 }
-/* line 135, ../scss/style.scss */
+/* line 137, ../scss/style.scss */
 .body .arm--r {
   z-index: 10;
   -webkit-animation: arm 1.6s -0.8s infinite linear;
   animation: arm 1.6s -0.8s infinite linear;
 }
-/* line 140, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 .body .arm--r .lower {
   -webkit-animation: arm--lower 1.6s -0.8s infinite linear;
   animation: arm--lower 1.6s -0.8s infinite linear;
 }
-/* line 145, ../scss/style.scss */
+/* line 147, ../scss/style.scss */
 .body .arm--l {
   -webkit-animation: arm 1.6s infinite linear;
   animation: arm 1.6s infinite linear;
 }
-/* line 148, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .body .arm--l .upper,
 .body .arm--l .lower {
   background: #5fb3ce;
 }
-/* line 153, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 .body .arm--l .lower {
   -webkit-animation: arm--lower 1.6s infinite linear;
   animation: arm--lower 1.6s infinite linear;
 }
-/* line 158, ../scss/style.scss */
+/* line 160, ../scss/style.scss */
 .body .leg {
   margin-top: 222.4px;
 }
-/* line 161, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 .body .leg .upper,
 .body .leg .lower {
   width: 43.2px;
   margin-left: 5.4px;
   background: lightgrey;
 }
-/* line 169, ../scss/style.scss */
+/* line 171, ../scss/style.scss */
 .body .leg .upper {
   height: 95.55975px;
   border-radius: 0px 0px 21.6px 21.6px;
 }
-/* line 174, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 .body .leg .lower {
   height: 87.83775px;
   margin-top: -21.6px;
   border-radius: 21.6px 21.6px 0px 0px;
 }
-/* line 180, ../scss/style.scss */
+/* line 182, ../scss/style.scss */
 .body .leg .foot {
   height: 27.027px;
   width: 43.2px;
@@ -445,7 +447,7 @@ a {
   margin-top: 72.83775px;
   background: darkgrey;
 }
-/* line 188, ../scss/style.scss */
+/* line 190, ../scss/style.scss */
 .body .leg .foot:after {
   content: "";
   width: 0px;
@@ -455,48 +457,48 @@ a {
   border-top: 13.5135px solid transparent;
   border-left: 27.027px solid darkgrey;
 }
-/* line 201, ../scss/style.scss */
+/* line 203, ../scss/style.scss */
 .body .leg--l {
   -webkit-animation: leg 1.6s -0.8s infinite linear;
   animation: leg 1.6s -0.8s infinite linear;
 }
-/* line 204, ../scss/style.scss */
+/* line 206, ../scss/style.scss */
 .body .leg--l .upper,
 .body .leg--l .lower {
   background: #b9b9b9;
 }
-/* line 210, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 .body .leg--l .lower {
   -webkit-animation: leg--lower 1.6s -0.8s infinite linear;
   animation: leg--lower 1.6s -0.8s infinite linear;
 }
-/* line 214, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 .body .leg--l .foot {
   background: #8f8f8f;
   -webkit-animation: foot 1.6s -0.8s infinite linear;
   animation: foot 1.6s -0.8s infinite linear;
 }
-/* line 219, ../scss/style.scss */
+/* line 221, ../scss/style.scss */
 .body .leg--l .foot:after {
   border-left: 29.7297px solid #8f8f8f;
 }
-/* line 226, ../scss/style.scss */
+/* line 228, ../scss/style.scss */
 .body .leg--r {
   -webkit-animation: leg 1.6s infinite linear;
   animation: leg 1.6s infinite linear;
 }
-/* line 229, ../scss/style.scss */
+/* line 231, ../scss/style.scss */
 .body .leg--r .lower {
   -webkit-animation: leg--lower 1.6s infinite linear;
   animation: leg--lower 1.6s infinite linear;
 }
-/* line 233, ../scss/style.scss */
+/* line 235, ../scss/style.scss */
 .body .leg--r .foot {
   -webkit-animation: foot 1.6s infinite linear;
   animation: foot 1.6s infinite linear;
 }
 
-/* line 240, ../scss/style.scss */
+/* line 242, ../scss/style.scss */
 hr {
   margin-top: -80px;
 }
